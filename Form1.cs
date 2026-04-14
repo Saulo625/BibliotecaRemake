@@ -24,9 +24,10 @@ namespace BibliotecaRemake
             //localiza o botao btnErro, verifica se existe, se existir, retorna o primeiro e adiciona a funcao de click.
 
             livros = new Livros();
-            erros.Dock = DockStyle.Fill;
-            tpErro.Controls.Add(erros);
-            erros.Controls.Find("btnErro", true).First().Click += VoltarTelaPrincipal;
+            livros.Dock = DockStyle.Fill;
+
+            tpLivros.Controls.Add(livros);
+            //livros.Controls.Find("btnLivros", true).First().Click += VoltarTelaPrincipal;
 
 
         }
@@ -44,6 +45,7 @@ namespace BibliotecaRemake
         private void btnLivros_Click(object sender, EventArgs e)
         {
             tcControle.SelectTab(tpLivros);
+            Size = new System.Drawing.Size(800, 600); 
         }
     }
 }
