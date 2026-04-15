@@ -11,41 +11,64 @@ using System.Windows.Forms;
 namespace BibliotecaRemake
 {
     public partial class Form1 : Form
-    {
-        private Erros erros;
+    {        
         private Livros livros;
+        private Usuarios Usuarios;
+        
         public Form1()
         {
             InitializeComponent();
-            erros = new Erros();
-            erros.Dock = DockStyle.Fill; 
-            tpErro.Controls.Add(erros);
-            erros.Controls.Find("btnErro", true).First().Click += VoltarTelaPrincipal;
-            //localiza o botao btnErro, verifica se existe, se existir, retorna o primeiro e adiciona a funcao de click.
-
+                        
             livros = new Livros();
             livros.Dock = DockStyle.Fill;
-
             tpLivros.Controls.Add(livros);
-            //livros.Controls.Find("btnLivros", true).First().Click += VoltarTelaPrincipal;
+            livros.Controls.Find("btnLivros", true).First().Click += VoltarTelaPrincipal;
+            //localiza o botao btnLivros, verifica se existe, se existir, retorna o primeiro e adiciona a funcao de click.
+
+            Usuarios = new Usuarios();
+            Usuarios.Dock = DockStyle.Fill;
+            tpUsuarios.Controls.Add(Usuarios);
+            Usuarios.Controls.Find("button1", true).First().Click += VoltarTelaPrincipal;
+
+
 
 
         }
         private void VoltarTelaPrincipal (object sender, EventArgs e)
         {
             tcControle.SelectTab(tpTelaPrincipal);
-        }
-    
+            tpLivros.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
+            livros = null; //livros vai ser igual a nada
+            tcControle.SelectTab(tpTelaPrincipal);
+            tpUsuarios.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
+            Usuarios = null; //livros vai ser igual a nada
 
-        private void btnErro_Click(object sender, EventArgs e)
-        {
-            tcControle.SelectTab(tpErro);
+
+
         }
+      
+
 
         private void btnLivros_Click(object sender, EventArgs e)
         {
+            livros = new Livros();
+            tpLivros.Controls.Add(livros);
+            
+            
+            livros.Controls.Find("btnLivros", true).First().Click += VoltarTelaPrincipal;
             tcControle.SelectTab(tpLivros);
-            Size = new System.Drawing.Size(800, 600); 
+            Size = new System.Drawing.Size(800, 650); 
+            //Todos esses dados pegam a programaco e liga novamente os componentes que nao existiam antes.
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Usuarios = new Usuarios();          
+            tpUsuarios.Controls.Add(Usuarios);
+            Usuarios.Controls.Find("button1", true).First().Click += VoltarTelaPrincipal;
+            tcControle.SelectTab(tpUsuarios);
+            Size = new System.Drawing.Size(800, 600);
+
         }
     }
 }

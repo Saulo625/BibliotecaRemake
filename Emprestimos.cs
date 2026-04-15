@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace BibliotecaRemake
 {
-    public partial class Erros : UserControl
+    public partial class Emprestimos : UserControl
     {
-        public Erros()
+        public Emprestimos()
         {
             InitializeComponent();
         }
-
-       
     }
 }

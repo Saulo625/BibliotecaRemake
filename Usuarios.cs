@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace BibliotecaRemake
 {
-    public partial class Livros : UserControl
+    public partial class Usuarios : UserControl
     {
-        public Livros()
+        public Usuarios()
         {
             InitializeComponent();
         }
-
     }
 }
