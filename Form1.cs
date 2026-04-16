@@ -14,6 +14,8 @@ namespace BibliotecaRemake
     {        
         private Livros livros;
         private Usuarios Usuarios;
+        private Emprestimos Emprestimos;
+        private Funcionarios Funcionarios;
         
         public Form1()
         {
@@ -30,20 +32,34 @@ namespace BibliotecaRemake
             tpUsuarios.Controls.Add(Usuarios);
             Usuarios.Controls.Find("button1", true).First().Click += VoltarTelaPrincipal;
 
+            Emprestimos = new Emprestimos();
+            Emprestimos.Dock = DockStyle.Fill;
+            tpEmprestimos.Controls.Add(Emprestimos);
+            Emprestimos.Controls.Find("btnVoltar", true).First().Click += VoltarTelaPrincipal;
 
-
-
+            Funcionarios = new Funcionarios();
+            Funcionarios.Dock = DockStyle.Fill;
+            tpFuncionarios.Controls.Add(Funcionarios);
+            Funcionarios.Controls.Find("btnVoltar", true).First().Click += VoltarTelaPrincipal;
+            
         }
-        private void VoltarTelaPrincipal (object sender, EventArgs e)
+        private void VoltarTelaPrincipal (object sender, EventArgs e)// esse sao os botoes de voltar 
         {
             tcControle.SelectTab(tpTelaPrincipal);
             tpLivros.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
             livros = null; //livros vai ser igual a nada
+            
             tcControle.SelectTab(tpTelaPrincipal);
             tpUsuarios.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
             Usuarios = null; //livros vai ser igual a nada
 
+            tcControle.SelectTab(tpTelaPrincipal);
+            tpEmprestimos.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
+            Emprestimos = null; //livros vai ser igual a nada
 
+            tcControle.SelectTab(tpTelaPrincipal);
+            tpFuncionarios.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
+            Funcionarios = null; //livros vai ser igual a nada
 
         }
       
@@ -52,9 +68,7 @@ namespace BibliotecaRemake
         private void btnLivros_Click(object sender, EventArgs e)
         {
             livros = new Livros();
-            tpLivros.Controls.Add(livros);
-            
-            
+            tpLivros.Controls.Add(livros);                     
             livros.Controls.Find("btnLivros", true).First().Click += VoltarTelaPrincipal;
             tcControle.SelectTab(tpLivros);
             Size = new System.Drawing.Size(800, 650); 
@@ -70,5 +84,25 @@ namespace BibliotecaRemake
             Size = new System.Drawing.Size(800, 600);
 
         }
+
+        private void btnEmprestimos_Click(object sender, EventArgs e)
+        {
+            Emprestimos = new Emprestimos();
+            tpEmprestimos.Controls.Add(Emprestimos);
+            Emprestimos.Controls.Find("btnVoltar", true).First().Click += VoltarTelaPrincipal;
+            tcControle.SelectTab(tpEmprestimos);
+            Size = new System.Drawing.Size(800, 600);
+        }
+
+        private void btnFuncionarios_Click(object sender, EventArgs e)
+        {
+            Funcionarios = new Funcionarios();
+            tpFuncionarios.Controls.Add(Funcionarios);
+            Funcionarios.Controls.Find("btnVoltar", true).First().Click += VoltarTelaPrincipal;
+            tcControle.SelectTab(tpFuncionarios);
+            Size = new System.Drawing.Size(800, 600);
+        }
+
+
     }
 }

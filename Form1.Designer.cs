@@ -35,7 +35,6 @@
             this.btnUsuarios = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnLivros = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.siticoneCircleButton1 = new Siticone.Desktop.UI.WinForms.SiticoneCircleButton();
-            this.btnErro = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.tpLivros = new System.Windows.Forms.TabPage();
             this.tpUsuarios = new System.Windows.Forms.TabPage();
             this.tpEmprestimos = new System.Windows.Forms.TabPage();
@@ -68,7 +67,6 @@
             this.tpTelaPrincipal.Controls.Add(this.btnUsuarios);
             this.tpTelaPrincipal.Controls.Add(this.btnLivros);
             this.tpTelaPrincipal.Controls.Add(this.siticoneCircleButton1);
-            this.tpTelaPrincipal.Controls.Add(this.btnErro);
             this.tpTelaPrincipal.Location = new System.Drawing.Point(4, 22);
             this.tpTelaPrincipal.Name = "tpTelaPrincipal";
             this.tpTelaPrincipal.Padding = new System.Windows.Forms.Padding(3);
@@ -86,11 +84,12 @@
             this.btnFuncionarios.FillColor = System.Drawing.Color.Gray;
             this.btnFuncionarios.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuncionarios.ForeColor = System.Drawing.Color.White;
-            this.btnFuncionarios.Location = new System.Drawing.Point(0, 255);
+            this.btnFuncionarios.Location = new System.Drawing.Point(0, 193);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(180, 45);
             this.btnFuncionarios.TabIndex = 5;
             this.btnFuncionarios.Text = "Funcionarios";
+            this.btnFuncionarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
             // 
             // btnEmprestimos
             // 
@@ -102,11 +101,12 @@
             this.btnEmprestimos.FillColor = System.Drawing.Color.Gray;
             this.btnEmprestimos.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmprestimos.ForeColor = System.Drawing.Color.White;
-            this.btnEmprestimos.Location = new System.Drawing.Point(0, 193);
+            this.btnEmprestimos.Location = new System.Drawing.Point(0, 131);
             this.btnEmprestimos.Name = "btnEmprestimos";
             this.btnEmprestimos.Size = new System.Drawing.Size(180, 45);
             this.btnEmprestimos.TabIndex = 4;
             this.btnEmprestimos.Text = "Emprestimos";
+            this.btnEmprestimos.Click += new System.EventHandler(this.btnEmprestimos_Click);
             // 
             // btnUsuarios
             // 
@@ -118,7 +118,7 @@
             this.btnUsuarios.FillColor = System.Drawing.Color.Gray;
             this.btnUsuarios.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 128);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 66);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(180, 45);
             this.btnUsuarios.TabIndex = 3;
@@ -135,7 +135,7 @@
             this.btnLivros.FillColor = System.Drawing.Color.Gray;
             this.btnLivros.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLivros.ForeColor = System.Drawing.Color.White;
-            this.btnLivros.Location = new System.Drawing.Point(0, 62);
+            this.btnLivros.Location = new System.Drawing.Point(0, 0);
             this.btnLivros.Name = "btnLivros";
             this.btnLivros.Size = new System.Drawing.Size(180, 45);
             this.btnLivros.TabIndex = 2;
@@ -158,23 +158,6 @@
             this.siticoneCircleButton1.Size = new System.Drawing.Size(148, 148);
             this.siticoneCircleButton1.TabIndex = 1;
             this.siticoneCircleButton1.Text = "🏠Home";
-            // 
-            // btnErro
-            // 
-            this.btnErro.BackColor = System.Drawing.Color.DimGray;
-            this.btnErro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnErro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnErro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnErro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnErro.FillColor = System.Drawing.Color.Gray;
-            this.btnErro.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnErro.ForeColor = System.Drawing.Color.White;
-            this.btnErro.Location = new System.Drawing.Point(0, 0);
-            this.btnErro.Name = "btnErro";
-            this.btnErro.Size = new System.Drawing.Size(180, 45);
-            this.btnErro.TabIndex = 0;
-            this.btnErro.Text = "Erro";
-     
             // 
             // tpLivros
             // 
@@ -234,7 +217,6 @@
 
         private MaterialSkin.Controls.MaterialTabControl tcControle;
         private System.Windows.Forms.TabPage tpTelaPrincipal;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton btnErro;
         private Siticone.Desktop.UI.WinForms.SiticoneCircleButton siticoneCircleButton1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnLivros;
         private System.Windows.Forms.TabPage tpLivros;

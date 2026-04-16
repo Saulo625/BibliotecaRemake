@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.txtGenero = new System.Windows.Forms.TextBox();
@@ -42,17 +42,17 @@
             this.lboLivros = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnVoltar
             // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(13, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 34);
-            this.button1.TabIndex = 98;
-            this.button1.Text = "🏠Home";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnVoltar.BackColor = System.Drawing.Color.Gray;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVoltar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(13, 12);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(85, 34);
+            this.btnVoltar.TabIndex = 98;
+            this.btnVoltar.Text = "🏠Home";
+            this.btnVoltar.UseVisualStyleBackColor = false;
             // 
             // txtTitulo
             // 
@@ -138,9 +138,9 @@
             this.materialLabel3.Location = new System.Drawing.Point(28, 204);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(56, 19);
             this.materialLabel3.TabIndex = 90;
-            this.materialLabel3.Text = "Telefone:";
+            this.materialLabel3.Text = "Status:";
             // 
             // materialLabel2
             // 
@@ -151,9 +151,9 @@
             this.materialLabel2.Location = new System.Drawing.Point(30, 137);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(51, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(77, 19);
             this.materialLabel2.TabIndex = 89;
-            this.materialLabel2.Text = "Email:";
+            this.materialLabel2.Text = "Data final:";
             // 
             // materialLabel1
             // 
@@ -164,9 +164,9 @@
             this.materialLabel1.Location = new System.Drawing.Point(28, 76);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(54, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(84, 19);
             this.materialLabel1.TabIndex = 88;
-            this.materialLabel1.Text = "Nome:";
+            this.materialLabel1.Text = "Data Inicial";
             // 
             // lboLivros
             // 
@@ -183,7 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.txtGenero);
@@ -204,7 +204,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.TextBox txtGenero;

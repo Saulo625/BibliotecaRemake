@@ -52,6 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BibliotecaDBDataSet.cs">
+      <DependentUpon>BibliotecaDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BibliotecaDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Emprestimos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,6 +71,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Funcionarios.Designer.cs">
+      <DependentUpon>Funcionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Livros.cs">
       <SubType>UserControl</SubType>
@@ -84,6 +98,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios.resx">
+      <DependentUpon>Funcionarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Livros.resx">
       <DependentUpon>Livros.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +116,17 @@
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BibliotecaDBDataSet.xsc">
+      <DependentUpon>BibliotecaDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BibliotecaDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BibliotecaDBDataSet.xss">
+      <DependentUpon>BibliotecaDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
