@@ -71,7 +71,7 @@ namespace BibliotecaRemake
             tpLivros.Controls.Add(livros);                     
             livros.Controls.Find("btnLivros", true).First().Click += VoltarTelaPrincipal;
             tcControle.SelectTab(tpLivros);
-            Size = new System.Drawing.Size(800, 650); 
+            Size = new System.Drawing.Size(800, 600); 
             //Todos esses dados pegam a programaco e liga novamente os componentes que nao existiam antes.
         }
 
@@ -81,7 +81,7 @@ namespace BibliotecaRemake
             tpUsuarios.Controls.Add(Usuarios);
             Usuarios.Controls.Find("button1", true).First().Click += VoltarTelaPrincipal;
             tcControle.SelectTab(tpUsuarios);
-            Size = new System.Drawing.Size(800, 600);
+            Size = new System.Drawing.Size(800, 550);
 
         }
 
@@ -91,7 +91,7 @@ namespace BibliotecaRemake
             tpEmprestimos.Controls.Add(Emprestimos);
             Emprestimos.Controls.Find("btnVoltar", true).First().Click += VoltarTelaPrincipal;
             tcControle.SelectTab(tpEmprestimos);
-            Size = new System.Drawing.Size(800, 600);
+            Size = new System.Drawing.Size(800, 550);
         }
 
         private void btnFuncionarios_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace BibliotecaRemake
             tpFuncionarios.Controls.Add(Funcionarios);
             Funcionarios.Controls.Find("btnVoltar", true).First().Click += VoltarTelaPrincipal;
             tcControle.SelectTab(tpFuncionarios);
-            Size = new System.Drawing.Size(800, 600);
+            Size = new System.Drawing.Size(800, 550);
         }
 
 

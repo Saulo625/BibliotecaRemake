@@ -35,11 +35,12 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAjuste = new System.Windows.Forms.Button();
             this.btnAcoes = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.lboLivros = new System.Windows.Forms.ListBox();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -117,18 +118,6 @@
             this.btnAcoes.Text = "Cadastrar";
             this.btnAcoes.UseVisualStyleBackColor = false;
             // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.Gray;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUsuarios.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Location = new System.Drawing.Point(31, 487);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(708, 39);
-            this.btnUsuarios.TabIndex = 76;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = false;
-            // 
             // materialLabel3
             // 
             this.materialLabel3.AutoSize = true;
@@ -173,16 +162,40 @@
             this.lboLivros.BackColor = System.Drawing.Color.Gray;
             this.lboLivros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lboLivros.FormattingEnabled = true;
-            this.lboLivros.Location = new System.Drawing.Point(382, 82);
+            this.lboLivros.Location = new System.Drawing.Point(382, 95);
             this.lboLivros.Name = "lboLivros";
-            this.lboLivros.Size = new System.Drawing.Size(357, 314);
+            this.lboLivros.Size = new System.Drawing.Size(357, 301);
             this.lboLivros.TabIndex = 69;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(378, 29);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(136, 19);
+            this.materialLabel4.TabIndex = 102;
+            this.materialLabel4.Text = "Pesquisar Usuario:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Gray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(382, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(357, 20);
+            this.textBox1.TabIndex = 101;
             // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtAutor);
@@ -190,13 +203,12 @@
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAjuste);
             this.Controls.Add(this.btnAcoes);
-            this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lboLivros);
             this.Name = "Usuarios";
-            this.Size = new System.Drawing.Size(774, 600);
+            this.Size = new System.Drawing.Size(774, 501);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,10 +223,11 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAjuste;
         private System.Windows.Forms.Button btnAcoes;
-        private System.Windows.Forms.Button btnUsuarios;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.ListBox lboLivros;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

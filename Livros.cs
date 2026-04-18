@@ -41,25 +41,19 @@ namespace BibliotecaRemake
 
        
 
-      
-
-      
-
-       
-
         private void lboLivros_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lboLivros.SelectedItem == null) return;
             LivrosRow livro = lboLivros.SelectedItem as LivrosRow;
             if (livro == null) return;
-            btnAjuste.Text = "excluir";
-            btnAcoes.Text = "Atualizar";
+            btnAcoes.Text = "Excluir";
+            btnAjuste.Text = "Atualizar";
             txtTitulo.Text = livro.Titulo;
             txtAutor.Text = livro.Autor;
             txtEditora.Text = livro.Editora;
             txtGenero.Text = livro.Genero;
             txtISBN.Text = livro.ISBN;
-            txtQuantidade.Text = livro.QuantidadeDisponivel.ToString();
+            txtQuantidade.Text = livro.Quantidade.ToString();
         }
 
         private void btnLimpar_Click_1(object sender, EventArgs e)
@@ -67,8 +61,8 @@ namespace BibliotecaRemake
             lboLivros.ClearSelected();
             AtualizarLista();
             limparElementos();
-            btnAcoes.Text = "Cadastrar";
-            btnAjuste.Text = "Atualizar lista";
+            btnAjuste.Text = "Cadastrar";
+            btnAcoes.Text = "Atualizar lista";
         }
 
         private void btnAjuste_Click(object sender, EventArgs e)
@@ -89,9 +83,10 @@ namespace BibliotecaRemake
                     limparElementos();
                     AtualizarLista();
                 }
-                catch (Exception ex)
+                catch
+
                 {
-                    MessageBox.Show(ex.Message, ex.GetType().Name);
+                    MessageBox.Show("Error de codigo");
                 }
             }
             else
@@ -114,15 +109,16 @@ namespace BibliotecaRemake
                 {
                     int quantidade = int.Parse(txtQuantidade.Text);
                     LivrosTableAdapter livros = new LivrosTableAdapter();
-                    livros.Update(livro.LivroID, livro.Titulo, livro.Autor, livro.Editora, livro.Genero, livro.ISBN, livro.QuantidadeDisponivel);
-                    btnAcoes.Text = "Cadastro";
-                    btnAjuste.Text = "Atualizar";
+                    livros.Update(livro.LivroID, titulo, genero, autor, editora, isbn, quantidade);
                     AtualizarLista();
                     limparElementos();
+                    btnAjuste.Text = "Cadastrar";
+                    btnAcoes.Text = "Atualizar lista";
+                    
                 }
                 catch
                 {
-                    MessageBox.Show("Numero invalido", "Eero de digitacao");
+                    MessageBox.Show("Numero invalido", "Erro de digitacao");
                 }
             }
         }
@@ -131,18 +127,38 @@ namespace BibliotecaRemake
         {
             if (btnAcoes.Text == "Excluir")
             {
-                if (lboLivros != null) return;
+                if (lboLivros.SelectedItem == null) return;
                 LivrosRow livro = lboLivros.SelectedItem as LivrosRow;
                 if (livro == null) return;
                 LivrosTableAdapter livros = new LivrosTableAdapter();
                 livros.Delete(livro.LivroID);
                 AtualizarLista();
                 limparElementos();
-                btnAcoes.Text = "Atualizar Lista";
-                btnAjuste.Text = "cadastrar";
+                btnAjuste.Text = "Cadastrar";
+                btnAcoes.Text = "Atualizar lista";
             }
+            else
+            {
+                AtualizarLista();
+            }
+        }
 
-
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            TextBox pesquisar = sender as TextBox;
+            if (pesquisar.Text == "")
+            {
+                AtualizarLista();
+                return;
+            }    
+            lboLivros.Items.Clear();
+            string textoDigitado = txtPesquisar.Text;
+            LivrosTableAdapter dados = new LivrosTableAdapter();
+            var livros = from linha in dados.GetData()
+                        where linha.Titulo.ToLower()
+                                .Contains(textoDigitado.ToLower())//o ToLower ignora o maiusculo e o minusculo.
+                         select linha;
+            foreach (var livro in livros) lboLivros.Items.Add(livro);
         }
     }
 }

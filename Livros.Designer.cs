@@ -35,9 +35,8 @@
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnAjuste = new System.Windows.Forms.Button();
             this.btnAcoes = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnAjuste = new System.Windows.Forms.Button();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
@@ -46,13 +45,15 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.lboLivros = new System.Windows.Forms.ListBox();
             this.btnLivros = new System.Windows.Forms.Button();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtTitulo
             // 
             this.txtTitulo.BackColor = System.Drawing.Color.Gray;
             this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTitulo.Location = new System.Drawing.Point(31, 88);
+            this.txtTitulo.Location = new System.Drawing.Point(31, 110);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(315, 20);
             this.txtTitulo.TabIndex = 67;
@@ -61,7 +62,7 @@
             // 
             this.txtAutor.BackColor = System.Drawing.Color.Gray;
             this.txtAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAutor.Location = new System.Drawing.Point(31, 149);
+            this.txtAutor.Location = new System.Drawing.Point(31, 173);
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(315, 20);
             this.txtAutor.TabIndex = 66;
@@ -70,7 +71,7 @@
             // 
             this.txtGenero.BackColor = System.Drawing.Color.Gray;
             this.txtGenero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGenero.Location = new System.Drawing.Point(31, 216);
+            this.txtGenero.Location = new System.Drawing.Point(31, 232);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(315, 20);
             this.txtGenero.TabIndex = 65;
@@ -79,7 +80,7 @@
             // 
             this.txtEditora.BackColor = System.Drawing.Color.Gray;
             this.txtEditora.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEditora.Location = new System.Drawing.Point(31, 283);
+            this.txtEditora.Location = new System.Drawing.Point(31, 292);
             this.txtEditora.Name = "txtEditora";
             this.txtEditora.Size = new System.Drawing.Size(315, 20);
             this.txtEditora.TabIndex = 64;
@@ -88,9 +89,9 @@
             // 
             this.txtQuantidade.BackColor = System.Drawing.Color.Gray;
             this.txtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQuantidade.Location = new System.Drawing.Point(33, 353);
+            this.txtQuantidade.Location = new System.Drawing.Point(31, 353);
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(313, 20);
+            this.txtQuantidade.Size = new System.Drawing.Size(315, 20);
             this.txtQuantidade.TabIndex = 63;
             // 
             // txtISBN
@@ -115,43 +116,31 @@
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click_1);
             // 
-            // btnAjuste
-            // 
-            this.btnAjuste.BackColor = System.Drawing.Color.Gray;
-            this.btnAjuste.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAjuste.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjuste.Location = new System.Drawing.Point(188, 475);
-            this.btnAjuste.Name = "btnAjuste";
-            this.btnAjuste.Size = new System.Drawing.Size(137, 36);
-            this.btnAjuste.TabIndex = 60;
-            this.btnAjuste.Text = "Atualizar Lista";
-            this.btnAjuste.UseVisualStyleBackColor = false;
-            this.btnAjuste.Click += new System.EventHandler(this.btnAjuste_Click);
-            // 
             // btnAcoes
             // 
             this.btnAcoes.BackColor = System.Drawing.Color.Gray;
             this.btnAcoes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAcoes.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcoes.Location = new System.Drawing.Point(33, 475);
+            this.btnAcoes.Location = new System.Drawing.Point(188, 475);
             this.btnAcoes.Name = "btnAcoes";
             this.btnAcoes.Size = new System.Drawing.Size(137, 36);
-            this.btnAcoes.TabIndex = 59;
-            this.btnAcoes.Text = "Cadastrar";
+            this.btnAcoes.TabIndex = 60;
+            this.btnAcoes.Text = "Atualizar Lista";
             this.btnAcoes.UseVisualStyleBackColor = false;
             this.btnAcoes.Click += new System.EventHandler(this.btnAcoes_Click);
             // 
-            // btnUsuarios
+            // btnAjuste
             // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.Gray;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUsuarios.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Location = new System.Drawing.Point(33, 532);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(708, 39);
-            this.btnUsuarios.TabIndex = 58;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnAjuste.BackColor = System.Drawing.Color.Gray;
+            this.btnAjuste.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAjuste.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjuste.Location = new System.Drawing.Point(33, 475);
+            this.btnAjuste.Name = "btnAjuste";
+            this.btnAjuste.Size = new System.Drawing.Size(137, 36);
+            this.btnAjuste.TabIndex = 59;
+            this.btnAjuste.Text = "Cadastrar";
+            this.btnAjuste.UseVisualStyleBackColor = false;
+            this.btnAjuste.Click += new System.EventHandler(this.btnAjuste_Click);
             // 
             // materialLabel6
             // 
@@ -185,7 +174,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(27, 261);
+            this.materialLabel4.Location = new System.Drawing.Point(27, 270);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(61, 19);
@@ -198,7 +187,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(27, 194);
+            this.materialLabel3.Location = new System.Drawing.Point(27, 210);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(61, 19);
@@ -211,7 +200,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(29, 127);
+            this.materialLabel2.Location = new System.Drawing.Point(29, 151);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(50, 19);
@@ -224,7 +213,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(27, 66);
+            this.materialLabel1.Location = new System.Drawing.Point(27, 88);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(52, 19);
@@ -236,9 +225,9 @@
             this.lboLivros.BackColor = System.Drawing.Color.Gray;
             this.lboLivros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lboLivros.FormattingEnabled = true;
-            this.lboLivros.Location = new System.Drawing.Point(384, 43);
+            this.lboLivros.Location = new System.Drawing.Point(384, 95);
             this.lboLivros.Name = "lboLivros";
-            this.lboLivros.Size = new System.Drawing.Size(357, 392);
+            this.lboLivros.Size = new System.Drawing.Size(357, 340);
             this.lboLivros.TabIndex = 51;
             this.lboLivros.SelectedIndexChanged += new System.EventHandler(this.lboLivros_SelectedIndexChanged);
             // 
@@ -254,11 +243,36 @@
             this.btnLivros.Text = "🏠Home";
             this.btnLivros.UseVisualStyleBackColor = false;
             // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel7.Location = new System.Drawing.Point(380, 29);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(117, 19);
+            this.materialLabel7.TabIndex = 102;
+            this.materialLabel7.Text = "Pesquisar Livro:";
+            // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.BackColor = System.Drawing.Color.Gray;
+            this.txtPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPesquisar.Location = new System.Drawing.Point(384, 51);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(357, 20);
+            this.txtPesquisar.TabIndex = 101;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Livros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Controls.Add(this.materialLabel7);
+            this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.btnLivros);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtAutor);
@@ -267,9 +281,8 @@
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.txtISBN);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnAjuste);
             this.Controls.Add(this.btnAcoes);
-            this.Controls.Add(this.btnUsuarios);
+            this.Controls.Add(this.btnAjuste);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.materialLabel4);
@@ -278,7 +291,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lboLivros);
             this.Name = "Livros";
-            this.Size = new System.Drawing.Size(778, 625);
+            this.Size = new System.Drawing.Size(778, 600);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,9 +306,8 @@
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnAjuste;
         private System.Windows.Forms.Button btnAcoes;
-        private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnAjuste;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
@@ -304,5 +316,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.ListBox lboLivros;
         private System.Windows.Forms.Button btnLivros;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private System.Windows.Forms.TextBox txtPesquisar;
     }
 }
