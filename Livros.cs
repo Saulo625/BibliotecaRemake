@@ -61,8 +61,8 @@ namespace BibliotecaRemake
             lboLivros.ClearSelected();
             AtualizarLista();
             limparElementos();
-            btnAjuste.Text = "Cadastrar";
-            btnAcoes.Text = "Atualizar lista";
+            btnAjuste.Text = "Atualizar lista";
+            btnAcoes.Text = "Cadastrar";
         }
 
         private void btnAjuste_Click(object sender, EventArgs e)
@@ -112,9 +112,9 @@ namespace BibliotecaRemake
                     livros.Update(livro.LivroID, titulo, genero, autor, editora, isbn, quantidade);
                     AtualizarLista();
                     limparElementos();
-                    btnAjuste.Text = "Cadastrar";
-                    btnAcoes.Text = "Atualizar lista";
-                    
+                    btnAjuste.Text = "Atualizar lista";
+                    btnAcoes.Text = "Cadastrar";
+
                 }
                 catch
                 {
@@ -134,8 +134,8 @@ namespace BibliotecaRemake
                 livros.Delete(livro.LivroID);
                 AtualizarLista();
                 limparElementos();
-                btnAjuste.Text = "Cadastrar";
-                btnAcoes.Text = "Atualizar lista";
+                btnAjuste.Text = "Atualizar lista";
+                btnAcoes.Text = "Cadastrar";
             }
             else
             {

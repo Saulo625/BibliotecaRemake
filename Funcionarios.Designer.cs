@@ -33,8 +33,8 @@
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnAjuste = new System.Windows.Forms.Button();
             this.btnAcoes = new System.Windows.Forms.Button();
+            this.btnAJuste = new System.Windows.Forms.Button();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -96,29 +96,29 @@
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             // 
-            // btnAjuste
-            // 
-            this.btnAjuste.BackColor = System.Drawing.Color.Gray;
-            this.btnAjuste.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAjuste.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjuste.Location = new System.Drawing.Point(185, 429);
-            this.btnAjuste.Name = "btnAjuste";
-            this.btnAjuste.Size = new System.Drawing.Size(137, 36);
-            this.btnAjuste.TabIndex = 105;
-            this.btnAjuste.Text = "Atualizar Lista";
-            this.btnAjuste.UseVisualStyleBackColor = false;
-            // 
             // btnAcoes
             // 
             this.btnAcoes.BackColor = System.Drawing.Color.Gray;
             this.btnAcoes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAcoes.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcoes.Location = new System.Drawing.Point(30, 429);
+            this.btnAcoes.Location = new System.Drawing.Point(185, 429);
             this.btnAcoes.Name = "btnAcoes";
             this.btnAcoes.Size = new System.Drawing.Size(137, 36);
-            this.btnAcoes.TabIndex = 104;
-            this.btnAcoes.Text = "Cadastrar";
+            this.btnAcoes.TabIndex = 105;
+            this.btnAcoes.Text = "Atualizar Lista";
             this.btnAcoes.UseVisualStyleBackColor = false;
+            // 
+            // btnAJuste
+            // 
+            this.btnAJuste.BackColor = System.Drawing.Color.Gray;
+            this.btnAJuste.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAJuste.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAJuste.Location = new System.Drawing.Point(30, 429);
+            this.btnAJuste.Name = "btnAJuste";
+            this.btnAJuste.Size = new System.Drawing.Size(137, 36);
+            this.btnAJuste.TabIndex = 104;
+            this.btnAJuste.Text = "Cadastrar";
+            this.btnAJuste.UseVisualStyleBackColor = false;
             // 
             // materialLabel3
             // 
@@ -227,8 +227,8 @@
             this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnAjuste);
             this.Controls.Add(this.btnAcoes);
+            this.Controls.Add(this.btnAJuste);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
@@ -247,8 +247,8 @@
         private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnAjuste;
         private System.Windows.Forms.Button btnAcoes;
+        private System.Windows.Forms.Button btnAJuste;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;

@@ -207,6 +207,7 @@
             this.Controls.Add(this.tcControle);
             this.Name = "Form1";
             this.Text = "Form1";
+          
             this.tcControle.ResumeLayout(false);
             this.tpTelaPrincipal.ResumeLayout(false);
             this.ResumeLayout(false);
