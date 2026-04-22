@@ -4,6 +4,14 @@
 
     partial class BibliotecaDBDataSet
     {
+        partial class FuncionariosDataTable
+        {
+        }
+
+        partial class Funcionarios
+        {
+
+        }
         partial class UsuariosDataTable
         {
         }
@@ -24,6 +32,13 @@
             public override string ToString()
             {
                 return ID_Usuario.ToString() + "-" + Nome;
+            }
+        }
+        partial class FuncionariosRow
+        {
+            public override string ToString()
+            {
+                return ID_funcionario.ToString() + "-" + NomeCompleto;
             }
         }
     }

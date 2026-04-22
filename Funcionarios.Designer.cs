@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtAutor = new System.Windows.Forms.TextBox();
-            this.txtGenero = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAcoes = new System.Windows.Forms.Button();
-            this.btnAJuste = new System.Windows.Forms.Button();
+            this.btnAjuste = new System.Windows.Forms.Button();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.lboLivros = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbofuncionarios = new System.Windows.Forms.ListBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -57,32 +57,32 @@
             this.btnVoltar.Text = "🏠Home";
             this.btnVoltar.UseVisualStyleBackColor = false;
             // 
-            // txtTitulo
+            // txtNome
             // 
-            this.txtTitulo.BackColor = System.Drawing.Color.Gray;
-            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTitulo.Location = new System.Drawing.Point(30, 99);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(315, 20);
-            this.txtTitulo.TabIndex = 109;
+            this.txtNome.BackColor = System.Drawing.Color.Gray;
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Location = new System.Drawing.Point(30, 99);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(315, 20);
+            this.txtNome.TabIndex = 109;
             // 
-            // txtAutor
+            // txtCargo
             // 
-            this.txtAutor.BackColor = System.Drawing.Color.Gray;
-            this.txtAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAutor.Location = new System.Drawing.Point(30, 160);
-            this.txtAutor.Name = "txtAutor";
-            this.txtAutor.Size = new System.Drawing.Size(315, 20);
-            this.txtAutor.TabIndex = 108;
+            this.txtCargo.BackColor = System.Drawing.Color.Gray;
+            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCargo.Location = new System.Drawing.Point(30, 160);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(315, 20);
+            this.txtCargo.TabIndex = 108;
             // 
-            // txtGenero
+            // txtEmail
             // 
-            this.txtGenero.BackColor = System.Drawing.Color.Gray;
-            this.txtGenero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGenero.Location = new System.Drawing.Point(30, 227);
-            this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(315, 20);
-            this.txtGenero.TabIndex = 107;
+            this.txtEmail.BackColor = System.Drawing.Color.Gray;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Location = new System.Drawing.Point(30, 227);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(315, 20);
+            this.txtEmail.TabIndex = 107;
             // 
             // btnLimpar
             // 
@@ -95,6 +95,7 @@
             this.btnLimpar.TabIndex = 106;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAcoes
             // 
@@ -107,18 +108,20 @@
             this.btnAcoes.TabIndex = 105;
             this.btnAcoes.Text = "Atualizar Lista";
             this.btnAcoes.UseVisualStyleBackColor = false;
+            this.btnAcoes.Click += new System.EventHandler(this.btnAcoes_Click);
             // 
-            // btnAJuste
+            // btnAjuste
             // 
-            this.btnAJuste.BackColor = System.Drawing.Color.Gray;
-            this.btnAJuste.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAJuste.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAJuste.Location = new System.Drawing.Point(30, 429);
-            this.btnAJuste.Name = "btnAJuste";
-            this.btnAJuste.Size = new System.Drawing.Size(137, 36);
-            this.btnAJuste.TabIndex = 104;
-            this.btnAJuste.Text = "Cadastrar";
-            this.btnAJuste.UseVisualStyleBackColor = false;
+            this.btnAjuste.BackColor = System.Drawing.Color.Gray;
+            this.btnAjuste.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAjuste.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjuste.Location = new System.Drawing.Point(30, 429);
+            this.btnAjuste.Name = "btnAjuste";
+            this.btnAjuste.Size = new System.Drawing.Size(137, 36);
+            this.btnAjuste.TabIndex = 104;
+            this.btnAjuste.Text = "Cadastrar";
+            this.btnAjuste.UseVisualStyleBackColor = false;
+            this.btnAjuste.Click += new System.EventHandler(this.btnAJuste_Click);
             // 
             // materialLabel3
             // 
@@ -159,24 +162,25 @@
             this.materialLabel1.TabIndex = 100;
             this.materialLabel1.Text = "Nome Completo:";
             // 
-            // lboLivros
+            // lbofuncionarios
             // 
-            this.lboLivros.BackColor = System.Drawing.Color.Gray;
-            this.lboLivros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lboLivros.FormattingEnabled = true;
-            this.lboLivros.Location = new System.Drawing.Point(381, 94);
-            this.lboLivros.Name = "lboLivros";
-            this.lboLivros.Size = new System.Drawing.Size(357, 301);
-            this.lboLivros.TabIndex = 99;
+            this.lbofuncionarios.BackColor = System.Drawing.Color.Gray;
+            this.lbofuncionarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbofuncionarios.FormattingEnabled = true;
+            this.lbofuncionarios.Location = new System.Drawing.Point(381, 94);
+            this.lbofuncionarios.Name = "lbofuncionarios";
+            this.lbofuncionarios.Size = new System.Drawing.Size(357, 301);
+            this.lbofuncionarios.TabIndex = 99;
+            this.lbofuncionarios.SelectedIndexChanged += new System.EventHandler(this.lbofuncionarios_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtSenha
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(30, 284);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 20);
-            this.textBox1.TabIndex = 114;
+            this.txtSenha.BackColor = System.Drawing.Color.Gray;
+            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSenha.Location = new System.Drawing.Point(30, 284);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(315, 20);
+            this.txtSenha.TabIndex = 114;
             // 
             // materialLabel5
             // 
@@ -204,14 +208,15 @@
             this.materialLabel4.TabIndex = 116;
             this.materialLabel4.Text = "Pesquisar funcionario:";
             // 
-            // textBox2
+            // txtPesquisar
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gray;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(381, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(357, 20);
-            this.textBox2.TabIndex = 115;
+            this.txtPesquisar.BackColor = System.Drawing.Color.Gray;
+            this.txtPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPesquisar.Location = new System.Drawing.Point(381, 50);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(357, 20);
+            this.txtPesquisar.TabIndex = 115;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
             // Funcionarios
             // 
@@ -219,20 +224,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPesquisar);
+            this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.txtTitulo);
-            this.Controls.Add(this.txtAutor);
-            this.Controls.Add(this.txtGenero);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtCargo);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAcoes);
-            this.Controls.Add(this.btnAJuste);
+            this.Controls.Add(this.btnAjuste);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.lboLivros);
+            this.Controls.Add(this.lbofuncionarios);
             this.Name = "Funcionarios";
             this.Size = new System.Drawing.Size(768, 497);
             this.ResumeLayout(false);
@@ -243,19 +248,19 @@
         #endregion
 
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.TextBox txtAutor;
-        private System.Windows.Forms.TextBox txtGenero;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnAcoes;
-        private System.Windows.Forms.Button btnAJuste;
+        private System.Windows.Forms.Button btnAjuste;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.ListBox lboLivros;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox lbofuncionarios;
+        private System.Windows.Forms.TextBox txtSenha;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPesquisar;
     }
 }
