@@ -39,7 +39,9 @@
     <Reference Include="Siticone.Desktop.UI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=9683591576b7f0b4, processorArchitecture=MSIL">
       <HintPath>packages\Siticone.Desktop.UI.2.1.1\lib\net40\Siticone.Desktop.UI.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -59,6 +61,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Consulta.Designer.cs">
+      <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
     <Compile Include="Emprestimos.cs">
       <SubType>UserControl</SubType>
@@ -92,6 +100,9 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consulta.resx">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Emprestimos.resx">
       <DependentUpon>Emprestimos.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,44 +1,78 @@
-﻿namespace BibliotecaRemake
+﻿using BibliotecaRemake.BibliotecaDBDataSetTableAdapters;
+using System.Linq;
+
+namespace BibliotecaRemake
 {
 
 
     partial class BibliotecaDBDataSet
     {
-        partial class FuncionariosDataTable
+        partial class LivrosDataTable
         {
         }
 
-        partial class Funcionarios
-        {
-
-        }
         partial class UsuariosDataTable
         {
         }
 
-        partial class LivrosDataTable
+        partial class FuncionariosDataTable
         {
         }
-        partial class LivrosRow
-        {
-            public override string ToString()
-            {
-                return LivroID.ToString() + "-" + Titulo;
-            }
 
-        }
-        partial class UsuariosRow
+        partial class EmprestimosDataTable
         {
-            public override string ToString()
-            {
-                return ID_Usuario.ToString() + "-" + Nome;
-            }
         }
+
         partial class FuncionariosRow
         {
             public override string ToString()
             {
-                return ID_funcionario.ToString() + "-" + NomeCompleto;
+                return NomeCompleto;
+            }
+        }
+
+        partial class UsuariosRow
+        {
+            public override string ToString()
+            {
+                return Nome;
+            }
+        }
+
+        partial class LivrosRow
+        {
+            public override string ToString()
+            {
+                return Titulo;
+            }
+        }
+
+
+
+
+        partial class EmprestimosRow
+        {
+            public string Devolucao
+            {
+                get
+                {
+                    try
+                    {
+                        return DataDevolucao.ToString();
+                    }
+                    catch
+                    {
+                        return "Devolvido";
+                    }
+                }
+            }
+            public override string ToString()
+            {
+                LivrosTableAdapter livros = new LivrosTableAdapter();
+                LivrosRow livro = (from linha in livros.GetData()
+                                   where linha.LivroID == this.LivroID
+                                   select linha).FirstOrDefault();
+                return livro.Titulo;
             }
         }
     }

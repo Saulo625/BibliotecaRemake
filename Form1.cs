@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaRemake;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace BibliotecaRemake
         private Usuarios Usuarios;
         private Emprestimos Emprestimos;
         private Funcionarios Funcionarios;
+        private Consulta consulta;
         
         public Form1()
         {
@@ -45,19 +47,19 @@ namespace BibliotecaRemake
         }
         private void VoltarTelaPrincipal (object sender, EventArgs e)// esse sao os botoes de voltar 
         {
-            tcControle.SelectTab(tpTelaPrincipal);
+            tcEmprestimos.SelectTab(tpTelaPrincipal);
             tpLivros.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
             livros = null; //livros vai ser igual a nada
             
-            tcControle.SelectTab(tpTelaPrincipal);
+            tcEmprestimos.SelectTab(tpTelaPrincipal);
             tpUsuarios.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
             Usuarios = null; //livros vai ser igual a nada
 
-            tcControle.SelectTab(tpTelaPrincipal);
+            tcEmprestimos.SelectTab(tpTelaPrincipal);
             tpEmprestimos.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
             Emprestimos = null; //livros vai ser igual a nada
 
-            tcControle.SelectTab(tpTelaPrincipal);
+            tcEmprestimos.SelectTab(tpTelaPrincipal);
             tpFuncionarios.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
             Funcionarios = null; //livros vai ser igual a nada
 
@@ -70,7 +72,7 @@ namespace BibliotecaRemake
             livros = new Livros();
             tpLivros.Controls.Add(livros);                     
             livros.Controls.Find("btnLivros", true).First().Click += VoltarTelaPrincipal;
-            tcControle.SelectTab(tpLivros);
+            tcEmprestimos.SelectTab(tpLivros);
             Size = new System.Drawing.Size(800, 600); 
             //Todos esses dados pegam a programaco e liga novamente os componentes que nao existiam antes.
         }
@@ -80,7 +82,7 @@ namespace BibliotecaRemake
             Usuarios = new Usuarios();          
             tpUsuarios.Controls.Add(Usuarios);
             Usuarios.Controls.Find("button1", true).First().Click += VoltarTelaPrincipal;
-            tcControle.SelectTab(tpUsuarios);
+            tcEmprestimos.SelectTab(tpUsuarios);
             Size = new System.Drawing.Size(800, 550);
 
         }
@@ -90,7 +92,7 @@ namespace BibliotecaRemake
             Emprestimos = new Emprestimos();
             tpEmprestimos.Controls.Add(Emprestimos);
             Emprestimos.Controls.Find("btnVoltar", true).First().Click += VoltarTelaPrincipal;
-            tcControle.SelectTab(tpEmprestimos);
+            tcEmprestimos.SelectTab(tpEmprestimos);
             Size = new System.Drawing.Size(800, 550);
         }
 
@@ -99,10 +101,31 @@ namespace BibliotecaRemake
             Funcionarios = new Funcionarios();
             tpFuncionarios.Controls.Add(Funcionarios);
             Funcionarios.Controls.Find("btnVoltar", true).First().Click += VoltarTelaPrincipal;
-            tcControle.SelectTab(tpFuncionarios);
+            tcEmprestimos.SelectTab(tpFuncionarios);
             Size = new System.Drawing.Size(800, 550);
         }
 
-     
+        private void btnEmprestar_Click(object sender, EventArgs e)
+        {
+            Funcionarios = new Funcionarios();
+            tpEmprestar.Controls.Add(Emprestimos);
+            Funcionarios.Controls.Find("btnVoltar", true).First().Click += VoltarTelaPrincipal;
+            tcEmprestimos.SelectTab(tcEmprestimos);
+            Size = new System.Drawing.Size(800, 550);
+        }
+        
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            tcEmprestimos.SelectTab(tpPrincipal);
+        }
+
+        
     }
 }
+//if (Emprestimos != null) Emprestimos.Dispose();
+//Emprestimos = null;
+//Emprestimos = new Emprestimos();
+//Emprestimos.Dock = DockStyle.Fill;
+//tpEmprestar.Controls.Add(Emprestimos);
+//tcEmprestimos.SelectTab(tpEmprestar);

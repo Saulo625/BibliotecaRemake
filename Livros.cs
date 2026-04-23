@@ -53,7 +53,7 @@ namespace BibliotecaRemake
             txtEditora.Text = livro.Editora;
             txtGenero.Text = livro.Genero;
             txtISBN.Text = livro.ISBN;
-            txtQuantidade.Text = livro.Quantidade.ToString();
+            txtQuantidade.Text = livro.QuantidadeDisponivel.ToString();
         }
 
         private void btnLimpar_Click_1(object sender, EventArgs e)

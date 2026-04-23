@@ -93,7 +93,7 @@ namespace BibliotecaRemake
                 try
                 {
                     FuncionariosTableAdapter funcionarios = new FuncionariosTableAdapter();
-                    funcionarios.Update(funcionarios.ID_funcionario, nome, cargo, email, senha);
+                    //funcionarios.Update(funcionarios.ID_funcionario, nome, cargo, email, senha);
                     AtualizarLista();
                     limparElementos();
                     btnAcoes.Text = "Atualizar lista";
@@ -121,10 +121,10 @@ namespace BibliotecaRemake
             if (btnAcoes.Text == "Excluir")
             {
                 if (lbofuncionarios.SelectedItem == null) return;
-                FuncionariosRow usuario = lbofuncionarios.SelectedItem as FuncionariosRow;
-                if (usuario == null) return;
-                FuncionariosTableAdapter livros = new FuncionariosTableAdapter();
-                livros.Delete(usuario.ID_Usuario);
+                FuncionariosRow funcionario = lbofuncionarios.SelectedItem as FuncionariosRow;
+                if (funcionario == null) return;
+                FuncionariosTableAdapter funcionarios = new FuncionariosTableAdapter();
+                //funcionarios.Delete(funcionarios.ID_funcionario);
                 AtualizarLista();
                 limparElementos();
                 btnAcoes.Text = "Atualizar lista";
@@ -147,11 +147,11 @@ namespace BibliotecaRemake
             lbofuncionarios.Items.Clear();
             string textoDigitado = txtPesquisar.Text;
             FuncionariosTableAdapter dados = new FuncionariosTableAdapter();
-            var usuario = from linha in dados.GetData()
-                          where linha.Nome.ToLower()
+            var funcionarios = from linha in dados.GetData()
+                          where linha.NomeCompleto.ToLower()
                                   .Contains(textoDigitado.ToLower())//o ToLower ignora o maiusculo e o minusculo.
                           select linha;
-            foreach (var usuarios in usuario) lbofuncionarios.Items.Add(usuarios);
+            foreach (var usuarios in funcionarios) lbofuncionarios.Items.Add(funcionarios);
         }
     }
 }
