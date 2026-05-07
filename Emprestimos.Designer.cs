@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnVoltar = new System.Windows.Forms.Button();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.txtAutor = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -41,18 +40,6 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Gray;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVoltar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(13, 12);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(85, 34);
-            this.btnVoltar.TabIndex = 98;
-            this.btnVoltar.Text = "🏠Home";
-            this.btnVoltar.UseVisualStyleBackColor = false;
             // 
             // txtTitulo
             // 
@@ -140,11 +127,13 @@
             // 
             this.lboUsuarios.BackColor = System.Drawing.Color.Gray;
             this.lboUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lboUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lboUsuarios.ForeColor = System.Drawing.Color.Black;
             this.lboUsuarios.FormattingEnabled = true;
+            this.lboUsuarios.ItemHeight = 15;
             this.lboUsuarios.Location = new System.Drawing.Point(425, 195);
             this.lboUsuarios.Name = "lboUsuarios";
-            this.lboUsuarios.Size = new System.Drawing.Size(337, 130);
+            this.lboUsuarios.Size = new System.Drawing.Size(337, 120);
             this.lboUsuarios.TabIndex = 103;
             // 
             // cboFuncionarios
@@ -194,7 +183,6 @@
             this.Controls.Add(this.cboFuncionarios);
             this.Controls.Add(this.lboUsuarios);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.btnLimpar);
@@ -202,15 +190,13 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lboLivros);
             this.Name = "Emprestimos";
-            this.Size = new System.Drawing.Size(794, 442);
+            this.Size = new System.Drawing.Size(806, 445);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.Button btnLimpar;

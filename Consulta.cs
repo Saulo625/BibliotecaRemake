@@ -12,14 +12,27 @@ using static BibliotecaRemake.BibliotecaDBDataSet;
 
 namespace BibliotecaRemake
 {
-    public partial class Consulta : UserControl
+    public partial class consultando : UserControl
     {
-        public Consulta()
+        public consultando()
         {
             InitializeComponent();
             EmprestimosTableAdapter emprestimos = new EmprestimosTableAdapter();
             lboConsulta.Items.AddRange(emprestimos.GetData().ToArray());
         }
+        private void livroIndisponivel()
+        {
+
+            lblTitulo.Text = "Livro nao existe";
+            lblFuncionario.Text = "Livro nao existe";
+            lblUsuario.Text = "Livro nao existe";
+            lblDataEmprestimo.Text = "Livro nao existe";
+            lblDataDevolucao.Text = "Livro nao existe";
+            lblStatus.Text = "Livro nao existe";
+        }
+     
+
+
 
         private void lboConsulta_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -28,17 +41,45 @@ namespace BibliotecaRemake
             lblDataEmprestimo.Text = emprestimos.DataRequisicao.ToString();
             lblDataDevolucao.Text = emprestimos.Devolucao;
             lblStatus.Text = emprestimos.Status;
-            
+
+
             LivrosTableAdapter livros = new LivrosTableAdapter();
             LivrosRow livro = (from linha in livros.GetData()
                               where linha.LivroID == emprestimos.LivroID
                               select linha).FirstOrDefault();
+
+            UsuariosTableAdapter usuarios = new UsuariosTableAdapter();
+            UsuariosRow usuario = (from linha in usuarios.GetData()
+                               where linha.ID_Usuario == emprestimos.ID_Usuario
+                               select linha).FirstOrDefault();
+            if (livro == null)
+            {
+
+                livroIndisponivel();
+                return;
+            }
+
+            if (usuario == null)
+
+                livroIndisponivel();
+
+            //if (funcionario == null)
+              //  livroIndisponivel();
+            lblUsuario.Text = usuario.ToString();
+
             if (livro == null) return;
             lblTitulo.Text = livro.Titulo;
             FuncionariosTableAdapter funcionarios = new FuncionariosTableAdapter();
             FuncionariosRow funcionario = (from linha in funcionarios.GetData()
-                                            where linha.ID_funcionario == emprestimos.ID_Funcionario
-                                          select linha).FirstOrDefault();
+                                           where linha.ID_funcionario == emprestimos.ID_Funcionario
+                                           select linha).FirstOrDefault();
+            lblFuncionario.Text = funcionario.ToString();
+
+
+           
+            
+
+
 
         }
 
@@ -56,12 +97,15 @@ namespace BibliotecaRemake
                 (from linha in emprestimos.GetData()
                 where emprestimos.ToString().ToLower().Contains(txtLivro.Text)
                 select linha).ToArray()
-                );
+            );
 
-
-
+            
 
         }
 
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

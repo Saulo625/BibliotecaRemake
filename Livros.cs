@@ -78,15 +78,15 @@ namespace BibliotecaRemake
                 try
                 {
                     int quantidade = int.Parse(txtQuantidade.Text);
-                    LivrosTableAdapter livros = new LivrosTableAdapter();
-                    livros.Insert(titulo, genero, autor, editora, isbn, quantidade);
+                    QueriesTableAdapter livros = new QueriesTableAdapter();
+                    livros.inserirDados(titulo, genero, autor, editora, isbn, quantidade);
                     limparElementos();
                     AtualizarLista();
                 }
                 catch
 
                 {
-                    MessageBox.Show("Error de codigo");
+                    MessageBox.Show("Erro de codigo");
                 }
             }
             else

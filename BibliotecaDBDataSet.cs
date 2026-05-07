@@ -59,6 +59,7 @@ namespace BibliotecaRemake
                     try
                     {
                         return DataDevolucao.ToString();
+                        
                     }
                     catch
                     {
@@ -72,8 +73,14 @@ namespace BibliotecaRemake
                 LivrosRow livro = (from linha in livros.GetData()
                                    where linha.LivroID == this.LivroID
                                    select linha).FirstOrDefault();
+                if (livro == null)
+                {
+                    return "O livro foi excluido";
+                }
+
                 return livro.Titulo;
             }
         }
+        
     }
 }

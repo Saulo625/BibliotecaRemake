@@ -33,7 +33,7 @@ namespace BibliotecaRemake
             UsuariosTableAdapter Usuarios = new UsuariosTableAdapter();
             var obterUsuario = from linha in Usuarios.GetData()                         
                               select linha;
-            foreach (var usuario in obterUsuario) lboUsuarios.Items.Add(Usuarios);
+            foreach (var usuario in obterUsuario) lboUsuarios.Items.Add(usuario);
 
 
         }
@@ -43,7 +43,7 @@ namespace BibliotecaRemake
             LivrosRow livroSelecionado = lboLivros.SelectedItem as LivrosRow;
                 UsuariosRow usuarioSelecionado = lboUsuarios.SelectedItem as UsuariosRow;
                 FuncionariosRow funcionariosSelecionado = cboFuncionarios.SelectedItem as FuncionariosRow;
-            if (funcionariosSelecionado != null ) return;
+            if (funcionariosSelecionado == null ) return;
             else if (livroSelecionado  == null) return;
             else if (funcionariosSelecionado == null) return ;
             QueriesTableAdapter consulta = new QueriesTableAdapter();// LivroIDmprestado @FuncionarioIDEmprestado @UsuarioIDEmprestado, colocar na ordem da procedure.
@@ -58,5 +58,7 @@ namespace BibliotecaRemake
 
 
         }
+
+      
     }
 }

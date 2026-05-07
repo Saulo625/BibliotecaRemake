@@ -117,8 +117,8 @@ namespace BibliotecaRemake
                 if (lboUsuarios.SelectedItem == null) return;
                 UsuariosRow usuario = lboUsuarios.SelectedItem as UsuariosRow;
                 if (usuario == null) return;
-                UsuariosTableAdapter livros = new UsuariosTableAdapter();
-                livros.Delete(usuario.ID_Usuario);
+                QueriesTableAdapter livros = new QueriesTableAdapter();
+                livros.DeletarUsuarios(usuario.ID_Usuario);
                 AtualizarLista();
                 limparElementos();
                 btnAcoes.Text = "Atualizar lista";

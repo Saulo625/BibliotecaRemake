@@ -16,7 +16,18 @@ namespace BibliotecaRemake
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //criando o login da biblioteca
+            Login entrando = new Login();
+            entrando.saida = false;
+            Application.Run(entrando);
+            if (entrando.saida)
+            {
+                entrando.Dispose();
+                entrando.Close();
+                Application.Run(new Form1());
+            }
+           
+
         }
     }
 }
