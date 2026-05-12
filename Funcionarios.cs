@@ -88,12 +88,12 @@ namespace BibliotecaRemake
                 string nome = txtNome.Text;
                 string cargo = txtCargo.Text;
                 string email = txtEmail.Text;
-                string senha = txtSenha.Text;
+                byte[] senha = System.Text.Encoding.UTF8.GetBytes(txtSenha.Text);
 
                 try
                 {
-                    FuncionariosTableAdapter funcionarios = new FuncionariosTableAdapter();
-                    //funcionarios.Update(funcionarios.ID_funcionario, nome, cargo, email, senha);
+                    QueriesTableAdapter funcionarios = new QueriesTableAdapter();
+                    funcionarios.atualizarDadosFuncionario(funcionario.ID_funcionario, nome, cargo, email, senha);
                     AtualizarLista();
                     limparElementos();
                     btnAcoes.Text = "Atualizar lista";
@@ -124,7 +124,7 @@ namespace BibliotecaRemake
                 FuncionariosRow funcionario = lbofuncionarios.SelectedItem as FuncionariosRow;
                 if (funcionario == null) return;
                 FuncionariosTableAdapter funcionarios = new FuncionariosTableAdapter();
-                //funcionarios.Delete(funcionarios.ID_funcionario);
+                funcionarios.Delete(funcionario.ID_funcionario);
                 AtualizarLista();
                 limparElementos();
                 btnAcoes.Text = "Atualizar lista";

@@ -1,4 +1,5 @@
 ﻿using BibliotecaRemake.BibliotecaDBDataSetTableAdapters;
+using System;
 using System.Linq;
 
 namespace BibliotecaRemake
@@ -7,6 +8,10 @@ namespace BibliotecaRemake
 
     partial class BibliotecaDBDataSet
     {
+        partial class ObterDadosUsuarioDataTable
+        {
+        }
+
         partial class LivrosDataTable
         {
         }
@@ -45,6 +50,11 @@ namespace BibliotecaRemake
             {
                 return Titulo;
             }
+
+            internal object GetData()
+            {
+                throw new NotImplementedException();
+            }
         }
 
 
@@ -59,7 +69,7 @@ namespace BibliotecaRemake
                     try
                     {
                         return DataDevolucao.ToString();
-                        
+
                     }
                     catch
                     {
@@ -80,7 +90,8 @@ namespace BibliotecaRemake
 
                 return livro.Titulo;
             }
+
+
         }
-        
     }
 }

@@ -47,6 +47,7 @@ namespace BibliotecaRemake
             LivrosRow livro = (from linha in livros.GetData()
                               where linha.LivroID == emprestimos.LivroID
                               select linha).FirstOrDefault();
+            lblTitulo.Text = emprestimos.Status;
 
             UsuariosTableAdapter usuarios = new UsuariosTableAdapter();
             UsuariosRow usuario = (from linha in usuarios.GetData()
@@ -63,8 +64,7 @@ namespace BibliotecaRemake
 
                 livroIndisponivel();
 
-            //if (funcionario == null)
-              //  livroIndisponivel();
+           
             lblUsuario.Text = usuario.ToString();
 
             if (livro == null) return;
@@ -74,10 +74,12 @@ namespace BibliotecaRemake
                                            where linha.ID_funcionario == emprestimos.ID_Funcionario
                                            select linha).FirstOrDefault();
             lblFuncionario.Text = funcionario.ToString();
+            if (funcionario == null)
+                livroIndisponivel();
 
 
-           
-            
+
+
 
 
 

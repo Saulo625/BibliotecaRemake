@@ -17,9 +17,27 @@ namespace BibliotecaRemake
         public Devolvendo()
         {
             InitializeComponent();
+            FuncionariosTableAdapter funcionarios = new FuncionariosTableAdapter();
+            var obterFuncionarios = from linha in funcionarios.GetData() select linha;
+            foreach (var funcionario in obterFuncionarios) cboFuncionarios.Items.Add(funcionario);
+            cboFuncionarios.SelectedIndex = 0;
+
+            //livros aqui!!
+            LivrosTableAdapter livros = new LivrosTableAdapter();
+            var obterLivros = from linha in livros.GetData()
+                              where linha.QuantidadeDisponivel > 0
+                              select linha;
+            foreach (var livro in obterLivros) lboLivros.Items.Add(livro);
+
+            //Usuarios aqui!!
+            UsuariosTableAdapter Usuarios = new UsuariosTableAdapter();
+            var obterUsuario = from linha in Usuarios.GetData()
+                               select linha;
+            foreach (var usuario in obterUsuario) lboUsuarios.Items.Add(usuario);
         }
 
-        private void btnDevolver_Click(object sender, EventArgs e)
+
+        private void btnDevolver_Click_1(object sender, EventArgs e)
         {
             LivrosRow livroSelecionado = lboLivros.SelectedItem as LivrosRow;
             UsuariosRow usuarioSelecionado = lboUsuarios.SelectedItem as UsuariosRow;
@@ -28,13 +46,13 @@ namespace BibliotecaRemake
             else if (livroSelecionado == null) return;
             else if (funcionariosSelecionado == null) return;
             QueriesTableAdapter consulta = new QueriesTableAdapter();// LivroIDmprestado @FuncionarioIDEmprestado @UsuarioIDEmprestado, colocar na ordem da procedure.
-            consulta.DevolverLivro(           
+            consulta.DevolverLivro(
             livroSelecionado.LivroID,
             funcionariosSelecionado.ID_funcionario,
             usuarioSelecionado.ID_Usuario
+             
             );
-            MessageBox.Show($"O emprestimo ficou para ser desenvolvido no dia {DateTime.Now.AddDays(7)}");
-
+            MessageBox.Show($"O livro foi devolvido");
         }
     }
 }

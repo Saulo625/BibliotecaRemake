@@ -28,7 +28,7 @@ namespace BibliotecaRemake
 
         private void llblSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start ("https://www.google.com");
+            Process.Start ("https://www.google.com/search?q=foto+do+capit%C3%A3o+jack+sparrow&sca_esv=af156264804c4707&rlz=1C1MYPO_pt-BRBR1178BR1192&sxsrf=ANbL-n41vFmBbm1DP_6CmAUrsy3osQlcww%3A1778458173163&ei=PR4BatPWCenK1sQP-_LmAQ&biw=1366&bih=633&oq=foto+do+capitao+j&gs_lp=Egxnd3Mtd2l6LXNlcnAiEWZvdG8gZG8gY2FwaXRhbyBqKgIIADIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMggQABgWGB4YCjIIEAAYgAQYogQyBRAAGO8FMgUQABjvBUiMWVDOBFicTHACeAGQAQCYAcQBoAGcDqoBBDEuMTG4AQHIAQD4AQGYAg6gAqUQwgIKEAAYRxjWBBiwA8ICDRAAGIAEGIoFGEMYsAPCAhMQLhiABBiKBRhDGMgDGLAD2AEBwgITEC4YQxiABBiKBRjIAxiwA9gBAcICChAjGIAEGIoFGCfCAgoQABiABBiKBRhDwgIIEAAYgAQYsQPCAgUQABiABMICCxAAGIAEGLEDGIMBwgIKEAAYgAQYFBiHAsICBRAhGKABmAMAiAYBkAYSugYGCAEQARgIkgcFMi44LjSgB787sgcFMC44LjS4B-8PwgcHMi0yLjkuM8gHzAGACAE&sclient=gws-wiz-serp");
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -38,8 +38,8 @@ namespace BibliotecaRemake
                            select linha).FirstOrDefault();
             if (usuario == null)
             {
-                //MessageBox.Show("o login esta incorreto ou nao existe");
-                //return;
+              // MessageBox.Show("o login esta incorreto ou nao existe");
+               // return;
             }
             saida = true;
             Close();

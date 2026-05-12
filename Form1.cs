@@ -19,6 +19,7 @@ namespace BibliotecaRemake
         private Funcionarios Funcionarios;
         private consultando consultando; 
         private Devolvendo devolvendo;
+       
         
         public Form1()
         {
@@ -48,7 +49,19 @@ namespace BibliotecaRemake
             consultando = new consultando();
             consultando.Dock = DockStyle.Fill;
             tpConsulta.Controls.Add(consultando);
-            
+
+            devolvendo = new Devolvendo();
+            devolvendo.Dock = DockStyle.Fill;
+            tpDevolver.Controls.Add(devolvendo);
+
+            Emprestimos = new Emprestimos();
+            Emprestimos.Dock = DockStyle.Fill;
+            tpEmprestimos.Controls.Add(Emprestimos);
+         
+
+
+
+
 
 
 
@@ -61,23 +74,24 @@ namespace BibliotecaRemake
             livros = null; //livros vai ser igual a nada
             
             tcPrincipal.SelectTab(tpTelaPrincipal);
-            tpUsuarios.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
-            Usuarios = null; //livros vai ser igual a nada
+            tpUsuarios.Controls.Clear(); 
+            Usuarios = null; 
 
             tcPrincipal.SelectTab(tpTelaPrincipal);
-            tpEmprestar.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
-            Emprestimos = null; //livros vai ser igual a nada
+            tpEmprestar.Controls.Clear(); 
+            Emprestimos = null; 
 
             tcPrincipal.SelectTab(tpTelaPrincipal);
-            tpFuncionarios.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
-            Funcionarios = null; //livros vai ser igual a nada
+            tpFuncionarios.Controls.Clear(); 
+            Funcionarios = null; 
 
             tcPrincipal.SelectTab(tpTelaPrincipal);
-            tpConsulta.Controls.Clear(); //O botao de voltar vai limpar os dados dentro do tpLivros
-            consultando = null; //livros vai ser igual a nada
+            tpConsulta.Controls.Clear(); 
+            consultando = null; 
 
-
-
+            tcPrincipal.SelectTab(tpTelaPrincipal);
+            tpDevolver.Controls.Clear(); 
+            devolvendo = null;
 
         }
       
@@ -142,6 +156,22 @@ namespace BibliotecaRemake
             tcEmprestando.SelectTab(tpConsulta);
             tpConsulta.Controls.Add(consultando);
             Size = new System.Drawing.Size(800, 550);
+        }
+
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+            if (devolvendo != null)
+                devolvendo.Dispose();
+            devolvendo = null;
+            devolvendo = new Devolvendo();
+            tcEmprestando.SelectTab(tpDevolver);
+            tpDevolver.Controls.Add(devolvendo);
+            Size = new System.Drawing.Size(800, 550);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            VoltarTelaPrincipal(sender, e);
         }
     }
 }

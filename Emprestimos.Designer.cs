@@ -36,9 +36,9 @@
             this.lboLivros = new System.Windows.Forms.ListBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.lboUsuarios = new System.Windows.Forms.ListBox();
-            this.cboFuncionarios = new System.Windows.Forms.ComboBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.cboFuncionarios = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtTitulo
@@ -136,17 +136,6 @@
             this.lboUsuarios.Size = new System.Drawing.Size(337, 120);
             this.lboUsuarios.TabIndex = 103;
             // 
-            // cboFuncionarios
-            // 
-            this.cboFuncionarios.BackColor = System.Drawing.Color.Gray;
-            this.cboFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboFuncionarios.ForeColor = System.Drawing.Color.Black;
-            this.cboFuncionarios.FormattingEnabled = true;
-            this.cboFuncionarios.Location = new System.Drawing.Point(128, 49);
-            this.cboFuncionarios.Name = "cboFuncionarios";
-            this.cboFuncionarios.Size = new System.Drawing.Size(433, 21);
-            this.cboFuncionarios.TabIndex = 104;
-            // 
             // materialLabel3
             // 
             this.materialLabel3.AutoSize = true;
@@ -172,6 +161,17 @@
             this.materialLabel5.Size = new System.Drawing.Size(69, 19);
             this.materialLabel5.TabIndex = 106;
             this.materialLabel5.Text = "Usuarios";
+            // 
+            // cboFuncionarios
+            // 
+            this.cboFuncionarios.BackColor = System.Drawing.Color.Gray;
+            this.cboFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboFuncionarios.ForeColor = System.Drawing.Color.Black;
+            this.cboFuncionarios.FormattingEnabled = true;
+            this.cboFuncionarios.Location = new System.Drawing.Point(128, 49);
+            this.cboFuncionarios.Name = "cboFuncionarios";
+            this.cboFuncionarios.Size = new System.Drawing.Size(433, 21);
+            this.cboFuncionarios.TabIndex = 104;
             // 
             // Emprestimos
             // 
@@ -205,8 +205,8 @@
         private System.Windows.Forms.ListBox lboLivros;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ListBox lboUsuarios;
-        private System.Windows.Forms.ComboBox cboFuncionarios;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private System.Windows.Forms.ComboBox cboFuncionarios;
     }
 }

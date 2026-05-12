@@ -135,6 +135,7 @@
             this.btnDevolver.TabIndex = 122;
             this.btnDevolver.Text = "Devolver";
             this.btnDevolver.UseVisualStyleBackColor = false;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click_1);
             // 
             // materialLabel2
             // 

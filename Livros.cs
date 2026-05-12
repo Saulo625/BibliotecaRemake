@@ -79,7 +79,8 @@ namespace BibliotecaRemake
                 {
                     int quantidade = int.Parse(txtQuantidade.Text);
                     QueriesTableAdapter livros = new QueriesTableAdapter();
-                    livros.inserirDados(titulo, genero, autor, editora, isbn, quantidade);
+                    
+                        livros.inserirDados(titulo, genero, autor, editora, isbn, quantidade);
                     limparElementos();
                     AtualizarLista();
                 }
@@ -130,18 +131,36 @@ namespace BibliotecaRemake
                 if (lboLivros.SelectedItem == null) return;
                 LivrosRow livro = lboLivros.SelectedItem as LivrosRow;
                 if (livro == null) return;
-                LivrosTableAdapter livros = new LivrosTableAdapter();
-                livros.Delete(livro.LivroID);
-                AtualizarLista();
-                limparElementos();
-                btnAjuste.Text = "Atualizar lista";
-                btnAcoes.Text = "Cadastrar";
+                EmprestimosTableAdapter emprestando = new EmprestimosTableAdapter();
+
+                EmprestimosRow empresta =
+                    (from linha in emprestando.GetData()
+                     where linha.LivroID == livro.LivroID
+                     && linha.Status != "Devolvido"
+                     select linha).FirstOrDefault();
+
+                if (empresta != null)
+                {
+                    MessageBox.Show("Livro emprestado, nao pode ser excluido!");
+                }
+                else
+                {
+                    LivrosTableAdapter livros = new LivrosTableAdapter();
+                   livros.Delete(livro.LivroID);
+                    MessageBox.Show("Livro excluído com sucesso!");
+                    AtualizarLista();
+                    limparElementos();
+                    btnAjuste.Text = "Atualizar lista";
+                    btnAcoes.Text = "Cadastrar";
+                }
             }
             else
             {
                 AtualizarLista();
             }
-        }
+
+        }   
+        
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

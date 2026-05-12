@@ -34,6 +34,7 @@
             this.btnEmprestimos = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnUsuarios = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnLivros = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.siticoneCircleButton1 = new Siticone.Desktop.UI.WinForms.SiticoneCircleButton();
             this.tpLivros = new System.Windows.Forms.TabPage();
             this.tpUsuarios = new System.Windows.Forms.TabPage();
             this.tpEmprestimos = new System.Windows.Forms.TabPage();
@@ -44,13 +45,12 @@
             this.tpDevolver = new System.Windows.Forms.TabPage();
             this.tpConsulta = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.btnDevolver = new System.Windows.Forms.Button();
             this.btnEmprestar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.tpFuncionarios = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.siticoneCircleButton1 = new Siticone.Desktop.UI.WinForms.SiticoneCircleButton();
-            this.btnHome = new System.Windows.Forms.Button();
             this.tcPrincipal.SuspendLayout();
             this.tpTelaPrincipal.SuspendLayout();
             this.tpEmprestimos.SuspendLayout();
@@ -158,6 +158,23 @@
             this.btnLivros.TabIndex = 2;
             this.btnLivros.Text = "Livros";
             this.btnLivros.Click += new System.EventHandler(this.btnLivros_Click);
+            // 
+            // siticoneCircleButton1
+            // 
+            this.siticoneCircleButton1.BackColor = System.Drawing.Color.DimGray;
+            this.siticoneCircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneCircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneCircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.siticoneCircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.siticoneCircleButton1.FillColor = System.Drawing.Color.Gray;
+            this.siticoneCircleButton1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneCircleButton1.ForeColor = System.Drawing.Color.White;
+            this.siticoneCircleButton1.Location = new System.Drawing.Point(644, 0);
+            this.siticoneCircleButton1.Name = "siticoneCircleButton1";
+            this.siticoneCircleButton1.ShadowDecoration.Mode = Siticone.Desktop.UI.WinForms.Enums.ShadowMode.Circle;
+            this.siticoneCircleButton1.Size = new System.Drawing.Size(148, 148);
+            this.siticoneCircleButton1.TabIndex = 1;
+            this.siticoneCircleButton1.Text = "🏠Home";
             // 
             // tpLivros
             // 
@@ -267,7 +284,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.84615F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.82051F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.btnHome, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnDevolver, 2, 0);
@@ -278,30 +295,44 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(780, 48);
             this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.Gray;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Location = new System.Drawing.Point(609, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(165, 42);
+            this.btnHome.TabIndex = 4;
+            this.btnHome.Text = "🏠Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnDevolver
             // 
             this.btnDevolver.BackColor = System.Drawing.Color.Gray;
             this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolver.Location = new System.Drawing.Point(409, 3);
+            this.btnDevolver.Location = new System.Drawing.Point(407, 3);
             this.btnDevolver.Name = "btnDevolver";
-            this.btnDevolver.Size = new System.Drawing.Size(197, 42);
+            this.btnDevolver.Size = new System.Drawing.Size(196, 42);
             this.btnDevolver.TabIndex = 3;
             this.btnDevolver.Text = "Devolver";
             this.btnDevolver.UseVisualStyleBackColor = false;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
             // btnEmprestar
             // 
             this.btnEmprestar.BackColor = System.Drawing.Color.Gray;
             this.btnEmprestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmprestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmprestar.Location = new System.Drawing.Point(209, 3);
+            this.btnEmprestar.Location = new System.Drawing.Point(208, 3);
             this.btnEmprestar.Name = "btnEmprestar";
-            this.btnEmprestar.Size = new System.Drawing.Size(194, 42);
+            this.btnEmprestar.Size = new System.Drawing.Size(193, 42);
             this.btnEmprestar.TabIndex = 2;
             this.btnEmprestar.Text = "Emprestar";
             this.btnEmprestar.UseVisualStyleBackColor = false;
@@ -314,7 +345,7 @@
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.Location = new System.Drawing.Point(3, 3);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(200, 42);
+            this.btnConsultar.Size = new System.Drawing.Size(199, 42);
             this.btnConsultar.TabIndex = 1;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -339,35 +370,6 @@
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // siticoneCircleButton1
-            // 
-            this.siticoneCircleButton1.BackColor = System.Drawing.Color.DimGray;
-            this.siticoneCircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneCircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneCircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.siticoneCircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.siticoneCircleButton1.FillColor = System.Drawing.Color.Gray;
-            this.siticoneCircleButton1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siticoneCircleButton1.ForeColor = System.Drawing.Color.White;
-            this.siticoneCircleButton1.Location = new System.Drawing.Point(644, 0);
-            this.siticoneCircleButton1.Name = "siticoneCircleButton1";
-            this.siticoneCircleButton1.ShadowDecoration.Mode = Siticone.Desktop.UI.WinForms.Enums.ShadowMode.Circle;
-            this.siticoneCircleButton1.Size = new System.Drawing.Size(148, 148);
-            this.siticoneCircleButton1.TabIndex = 1;
-            this.siticoneCircleButton1.Text = "🏠Home";
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.Gray;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(612, 3);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(165, 42);
-            this.btnHome.TabIndex = 4;
-            this.btnHome.Text = "🏠Home";
-            this.btnHome.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
